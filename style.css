@@ -54,12 +54,18 @@ color:#d9a600;
 }
 
 .hero{
-height:100vh;
-background:url("hero.jpeg") center center/cover no-repeat;
+position:relative;
+min-height:100vh;
+
+background-image:url("hero.jpeg");
+background-size:cover;
+background-position:center top;
+background-repeat:no-repeat;
+background-attachment:fixed;
+
 display:flex;
 justify-content:center;
 align-items:center;
-position:relative;
 }
 
 .overlay{
@@ -345,4 +351,43 @@ opacity:1;
 grid-template-columns:repeat(2,140px);
 }
 
+}
+
+body{
+    background:url("hero.jpeg") center top fixed;
+    background-size:cover;
+}
+
+.services,
+.simulateur,
+.realisations,
+.zone,
+.contact{
+    position:relative;
+    background:rgba(255,255,255,.94);
+    backdrop-filter:blur(12px);
+}
+
+footer{
+    background:#111;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.45);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.gallery img{
+    transition:.5s;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
 }
