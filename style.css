@@ -766,15 +766,18 @@ margin:auto;
 }
 
 .hero{
-height:100vh;
-padding:120px 20px 60px;
-background-position:center;
+min-height:100vh;
+padding:170px 20px 70px;
+display:flex;
+justify-content:center;
+align-items:center;
 }
 
 .hero-content{
 width:100%;
 max-width:100%;
 padding:0;
+margin-top:40px;
 }
 
 .hero-content h1{
@@ -787,8 +790,10 @@ overflow-wrap:break-word;
 
 .hero-content p{
 font-size:18px;
+line-height:1.35;
 max-width:320px;
-margin:25px auto;
+margin:20px auto 35px;
+text-align:center;
 }
 
 .hero-buttons{
