@@ -1,61 +1,41 @@
-function calculer() {
+window.addEventListener("scroll", () => {
 
-    const facture = Number(document.getElementById("facture").value);
+    const navbar = document.querySelector(".navbar");
 
-    if (facture <= 0) {
-        document.getElementById("resultat").innerHTML =
-            "Veuillez entrer votre facture EDF.";
-        return;
-    }
+    if(window.scrollY > 80){
 
-    const economie = Math.round(facture * 12 * 0.65);
+        navbar.style.background = "rgba(255,255,255,.98)";
+        navbar.style.boxShadow = "0 12px 30px rgba(0,0,0,.08)";
 
-    document.getElementById("resultat").innerHTML =
-        "<p>Vous pourriez économiser jusqu'à :</p>" +
-        "<span style='font-size:46px;color:#D4AF37;font-weight:bold;'>" +
-        economie + " € / an</span><br><br>" +
-        "<a href='#contact' class='btn-yellow'>Recevoir mon devis gratuit</a>";
+    }else{
 
-}
-
-window.addEventListener("scroll", function () {
-
-    const nav = document.querySelector(".navbar");
-
-    if (window.scrollY > 50) {
-
-        nav.style.background = "rgba(255,255,255,0.97)";
-        nav.style.boxShadow = "0 10px 30px rgba(0,0,0,.08)";
-
-    } else {
-
-        nav.style.background = "rgba(255,255,255,.92)";
-        nav.style.boxShadow = "0 1px 15px rgba(0,0,0,.05)";
+        navbar.style.background = "rgba(255,255,255,.90)";
+        navbar.style.boxShadow = "none";
 
     }
 
 });
 
-const panels = document.querySelectorAll(".panel");
+const observer = new IntersectionObserver((entries)=>{
 
-function animationSolaire() {
+    entries.forEach(entry=>{
 
-    const section = document.querySelector(".animation-solaire");
-    const top = section.getBoundingClientRect().top;
+        if(entry.isIntersecting){
 
-    if (top < window.innerHeight - 150) {
+            entry.target.classList.add("show");
 
-        panels.forEach((panel, index) => {
+        }
 
-            setTimeout(() => {
-                panel.classList.add("visible");
-            }, index * 180);
+    });
 
-        });
+},{
+    threshold:.2
+});
 
-        window.removeEventListener("scroll", animationSolaire);
-    }
-}
+document.querySelectorAll(".card,.gallery img").forEach(el=>{
 
-window.addEventListener("scroll", animationSolaire);
-animationSolaire();
+    el.classList.add("hidden");
+
+    observer.observe(el);
+
+});
