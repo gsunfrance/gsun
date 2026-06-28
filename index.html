@@ -215,6 +215,8 @@ emailjs.init({
   publicKey: "LVNgxlzdIi7V1k0-1",
 });
 
+alert("Le script fonctionne !");
+
 document.getElementById("contact-form").addEventListener("submit", function(e){
 
 e.preventDefault();
@@ -222,8 +224,7 @@ e.preventDefault();
 emailjs.sendForm(
 "service_jk0srqp",
 "template_08bcw4r",
-this,
-"LVNgx1zdIi7V1k0-1"
+this
 ).then(function(){
 
 alert("Votre demande a bien été envoyée !");
