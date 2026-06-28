@@ -6,388 +6,781 @@ scroll-behavior:smooth;
 }
 
 body{
+margin:0;
 font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;
-background:#ffffff;
-color:#1d1d1f;
+background:#fff;
+color:#111;
 overflow-x:hidden;
-}
-
-.container{
-width:90%;
-max-width:1300px;
-margin:auto;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.navbar{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-padding:20px 0;
-background:rgba(255,255,255,.92);
-backdrop-filter:blur(20px);
-z-index:999;
-box-shadow:0 1px 15px rgba(0,0,0,.05);
-}
-
-.logo{
-height:65px;
-}
-
-nav{
-display:flex;
-gap:35px;
-}
-
-nav a{
-text-decoration:none;
-color:#1d1d1f;
-font-weight:600;
-transition:.3s;
-}
-
-nav a:hover{
-color:#d9a600;
+position:relative;
 }
 
 .hero{
-position:relative;
-min-height:100vh;
 
-background-image:url("hero.jpeg");
+height:100vh;
+
+background:transparent;
+
 background-size:cover;
-background-position:center top;
+background-position:center;
 background-repeat:no-repeat;
 background-attachment:fixed;
 
 display:flex;
 justify-content:center;
 align-items:center;
+
+text-align:center;
+
 }
 
-.overlay{
-position:absolute;
-inset:0;
-background:rgba(0,0,0,.45);
+.navbar{
+
+position:fixed;
+top:0;
+left:0;
+
+width:100%;
+
+padding:22px 7%;
+
+display:flex;
+
+justify-content:center;
+
+z-index:999;
+
+backdrop-filter:blur(18px);
+
+background:rgba(255,255,255,.82);
+
+transition:.4s;
+
+}
+
+.container{
+
+width:100%;
+max-width:1450px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+}
+
+.logo{
+
+height:65px;
+
+}
+
+nav{
+
+display:flex;
+
+gap:45px;
+
+}
+
+nav a{
+
+text-decoration:none;
+
+font-weight:600;
+
+color:#111;
+
+transition:.35s;
+
+}
+
+nav a:hover{
+
+color:#f4b400;
+
+}
+
+.btn-nav{
+
+background:#FFD54A;
+
+padding:14px 28px;
+
+border-radius:50px;
+
+text-decoration:none;
+
+font-weight:700;
+
+color:#111;
+
 }
 
 .hero-content{
-position:relative;
-z-index:2;
-text-align:center;
-color:white;
+
 width:90%;
+
 max-width:900px;
+
+color:white;
+
+}
+
+.mini-title{
+
+display:inline-block;
+
+letter-spacing:4px;
+
+font-size:14px;
+
+margin-bottom:25px;
+
 }
 
 .hero h1{
-font-size:72px;
+
+font-size:76px;
+
 font-weight:800;
-margin-bottom:20px;
-line-height:1.1;
+
+line-height:1.05;
+
+margin-bottom:30px;
+
 }
 
 .hero p{
+
 font-size:24px;
-line-height:1.6;
-margin-bottom:40px;
+
+line-height:1.7;
+
+margin-bottom:45px;
+
 }
 
-.buttons{
+.hero-buttons{
+
 display:flex;
+
 justify-content:center;
+
 gap:20px;
+
 flex-wrap:wrap;
+
 }
 
 .btn-yellow{
-background:#FFD54A;
-color:#000;
-padding:18px 36px;
-border-radius:50px;
-font-weight:700;
-text-decoration:none;
-transition:.3s;
-}
 
-.btn-yellow:hover{
-transform:translateY(-4px);
-box-shadow:0 15px 40px rgba(255,213,74,.45);
+background:#FFD54A;
+
+color:#111;
+
+padding:20px 42px;
+
+border-radius:50px;
+
+text-decoration:none;
+
+font-weight:700;
+
+transition:.35s;
+
 }
 
 .btn-white{
+
 background:white;
-color:#000;
-padding:18px 36px;
+
+padding:20px 42px;
+
 border-radius:50px;
-font-weight:700;
+
 text-decoration:none;
-transition:.3s;
+
+font-weight:700;
+
+color:#111;
+
 }
 
+.btn-yellow:hover,
 .btn-white:hover{
-transform:translateY(-4px);
+
+transform:translateY(-6px);
+
+box-shadow:0 18px 35px rgba(0,0,0,.18);
+
+}
+
+.intro{
+
+padding:90px 8%;
+
+background:white;
+
+}
+
+.intro-box{
+
+max-width:900px;
+
+margin:auto;
+
+text-align:center;
+
+}
+
+.intro h2{
+
+font-size:54px;
+
+margin-bottom:25px;
+
+}
+
+.intro p{
+
+font-size:22px;
+
+line-height:1.8;
+
+color:#555;
+
+}
+
+.section-title{
+
+text-align:center;
+
+margin-bottom:50px;
+
+}
+
+.section-title span{
+
+color:#FFD54A;
+
+font-weight:700;
+
+letter-spacing:3px;
+
+display:block;
+
+margin-bottom:10px;
+
+}
+
+.section-title h2{
+
+font-size:56px;
+
+margin-bottom:15px;
+
+}
+
+.section-title p{
+
+font-size:21px;
+
+color:#666;
+
+}
+
+.services{
+
+padding:90px 8%;
+
+background:#fafafa;
+
+}
+
+.cards{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+
+gap:28px;
+
+}
+
+.card{
+
+background:white;
+
+padding:40px;
+
+border-radius:25px;
+
+box-shadow:0 15px 40px rgba(0,0,0,.06);
+
+transition:.4s;
+
+}
+
+.card:hover{
+
+transform:translateY(-12px);
+
+}
+
+.card h3{
+
+font-size:28px;
+
+margin-bottom:15px;
+
+}
+
+.card p{
+
+line-height:1.8;
+
+color:#666;
+
+}
+
+.realisations{
+
+padding:90px 8%;
+
+background:white;
+
+}
+
+.gallery{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+gap:25px;
+
+}
+
+.item{
+
+overflow:hidden;
+
+border-radius:28px;
+
+}
+
+.item img{
+
+width:100%;
+
+height:340px;
+
+object-fit:cover;
+
+transition:.6s;
+
+}
+
+.item:hover img{
+
+transform:scale(1.08);
+
+}
+
+.intervention{
+
+padding:90px 8%;
+
+background:#FFD54A;
+
+text-align:center;
+
+}
+
+.container-small{
+
+max-width:900px;
+
+margin:auto;
+
+}
+
+.container-small h2{
+
+font-size:54px;
+
+margin-bottom:20px;
+
+}
+
+.container-small p{
+
+font-size:22px;
+
+line-height:1.8;
+
+}
+
+.contact{
+
+padding:100px 8%;
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:70px;
+
+background:#111;
+
+color:white;
+
+}
+
+.contact-left span{
+
+color:#FFD54A;
+
+font-weight:700;
+
+letter-spacing:3px;
+
+}
+
+.contact-left h2{
+
+font-size:56px;
+
+margin:25px 0;
+
+}
+
+.contact-left p{
+
+font-size:21px;
+
+line-height:1.8;
+
+margin-bottom:35px;
+
+}
+
+.phone,
+.mail{
+
+display:block;
+
+color:white;
+
+text-decoration:none;
+
+margin-top:18px;
+
+font-size:22px;
+
+}
+
+.contact-form{
+
+display:flex;
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+.contact-form input,
+.contact-form textarea{
+
+padding:18px;
+
+border:none;
+
+border-radius:18px;
+
+font-size:18px;
+
+}
+
+.contact-form textarea{
+
+height:180px;
+
+resize:none;
+
+}
+
+.contact-form button{
+
+background:#FFD54A;
+
+border:none;
+
+padding:20px;
+
+border-radius:50px;
+
+font-size:20px;
+
+font-weight:700;
+
+cursor:pointer;
+
+}
+
+footer{
+
+padding:60px;
+
+background:black;
+
+color:white;
+
+text-align:center;
+
+}
+
+.footer-logo{
+
+height:90px;
+
+margin-bottom:20px;
+
 }
 
 @media(max-width:900px){
 
 nav{
+
 display:none;
+
 }
 
-.logo{
-height:55px;
+.btn-nav{
+
+display:none;
+
 }
 
 .hero h1{
+
 font-size:48px;
+
 }
 
 .hero p{
+
 font-size:20px;
+
 }
 
-.buttons{
+.hero-buttons{
+
 flex-direction:column;
-}
 
-.btn-yellow,
-.btn-white{
-width:100%;
-}
-
-}
-
-.simulateur{
-padding:120px 8%;
-background:#ffffff;
-}
-
-.simulateur-box{
-max-width:700px;
-margin:auto;
-text-align:center;
-}
-
-.simulateur-box input{
-width:100%;
-padding:22px;
-font-size:20px;
-border:2px solid #e5e5e5;
-border-radius:18px;
-margin-bottom:25px;
-outline:none;
-transition:.3s;
-}
-
-.simulateur-box input:focus{
-border-color:#FFD54A;
-}
-
-.simulateur-box button{
-background:#FFD54A;
-color:#000;
-border:none;
-padding:18px 40px;
-border-radius:50px;
-font-size:20px;
-font-weight:700;
-cursor:pointer;
-transition:.3s;
-}
-
-.simulateur-box button:hover{
-transform:translateY(-4px);
-box-shadow:0 15px 35px rgba(255,213,74,.35);
-}
-
-#resultat{
-margin-top:35px;
-font-size:28px;
-font-weight:700;
-line-height:1.6;
-}
-
-.realisations{
-padding:120px 8%;
-background:#f7f7f7;
-}
-
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:25px;
-margin-top:60px;
-}
-
-.gallery img{
-width:100%;
-height:300px;
-object-fit:cover;
-border-radius:25px;
-transition:.4s;
-cursor:pointer;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-}
-
-.gallery img:hover{
-transform:scale(1.03);
-}
-
-.zone{
-padding:120px 8%;
-text-align:center;
-background:white;
-}
-
-.zone-text{
-max-width:900px;
-margin:auto;
-font-size:22px;
-line-height:1.8;
-color:#555;
 }
 
 .contact{
-padding:120px 8%;
-background:#f7f7f7;
+
+grid-template-columns:1fr;
+
 }
 
-form{
-max-width:700px;
-margin:auto;
-display:flex;
-flex-direction:column;
-gap:20px;
 }
 
-form input,
-form textarea{
-padding:20px;
-border-radius:18px;
-border:2px solid #e6e6e6;
-font-size:18px;
-font-family:inherit;
+/* ===== Effet panneau solaire géant ===== */
+
+body{
+
+background:#ffffff;
+
 }
 
-form textarea{
-height:180px;
-resize:none;
+
+
+.hero{
+
+background:transparent;
+
+}
+
+.intro,
+.services,
+.realisations,
+.intervention,
+.contact,
+footer{
+
+position:relative;
+
+background:rgba(255,255,255,.94);
+
+backdrop-filter:blur(18px);
+
+-webkit-backdrop-filter:blur(18px);
+
+border-radius:35px;
+
+max-width:1450px;
+
+margin:40px auto;
+
+box-shadow:0 30px 80px rgba(0,0,0,.12);
+
+}
+
+.contact{
+
+background:rgba(15,15,15,.95);
+
 }
 
 footer{
-padding:70px 8%;
+
+margin-top:0;
+
+border-radius:35px 35px 0 0;
+
 background:#111;
-color:white;
-text-align:center;
+
 }
 
-.logo-footer{
-height:80px;
-margin-bottom:25px;
+.hero-content{
+
+animation:fadeHero 1.2s ease;
+
 }
 
-footer a{
-display:inline-block;
-margin-top:20px;
-color:#FFD54A;
-font-weight:700;
-text-decoration:none;
-}
+@keyframes fadeHero{
 
-.animation-solaire{
-padding:120px 8%;
-background:#fff;
-text-align:center;
-overflow:hidden;
-}
+from{
 
-.animation-solaire h2{
-font-size:48px;
-margin-bottom:70px;
-}
-
-.solar{
-display:grid;
-grid-template-columns:repeat(4,140px);
-gap:20px;
-justify-content:center;
-perspective:1200px;
-}
-
-.panel{
-width:140px;
-height:90px;
-background:linear-gradient(135deg,#1e3d7a,#2b67c9,#16305c);
-border:3px solid #5ec3ff;
-border-radius:8px;
-position:relative;
-transform:rotateX(90deg);
 opacity:0;
-transition:1s;
-box-shadow:0 15px 30px rgba(0,0,0,.25);
+
+transform:translateY(40px);
+
 }
 
-.panel::before{
-content:"";
-position:absolute;
-inset:0;
-background:
-linear-gradient(to right,transparent 24%,rgba(255,255,255,.35) 25%,transparent 26%,transparent 49%,rgba(255,255,255,.35) 50%,transparent 51%,transparent 74%,rgba(255,255,255,.35) 75%,transparent 76%),
-linear-gradient(to bottom,transparent 24%,rgba(255,255,255,.35) 25%,transparent 26%,transparent 49%,rgba(255,255,255,.35) 50%,transparent 51%,transparent 74%,rgba(255,255,255,.35) 75%,transparent 76%);
-}
+to{
 
-.panel.visible{
-transform:rotateX(0deg);
 opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+.card,
+.item{
+
+transition:.45s;
+
+}
+
+.card:hover{
+
+transform:translateY(-15px);
+
+box-shadow:0 25px 70px rgba(0,0,0,.15);
+
+}
+
+.item:hover{
+
+transform:translateY(-8px);
+
+}
+
+.item img{
+
+transition:1s;
+
+}
+
+.item:hover img{
+
+transform:scale(1.12);
+
 }
 
 @media(max-width:900px){
 
-.solar{
-grid-template-columns:repeat(2,140px);
-}
+.intro,
+.services,
+.realisations,
+.intervention,
+.contact,
+footer{
+
+margin:15px;
+
+border-radius:22px;
 
 }
 
-body{
-    background:url("hero.jpeg") center top fixed;
-    background-size:cover;
+}
+
+/* ===== PANNEAU SOLAIRE EN FOND ===== */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:url("panneau.jpeg") center top / cover no-repeat;
+
+z-index:-1;
+
+filter:brightness(.35);
+
+}
+
+/* ===== Sections sur le panneau ===== */
+
+.hero,
+.services,
+.realisations,
+.zone,
+.contact,
+footer{
+
+position:relative;
+z-index:2;
+
 }
 
 .services,
-.simulateur,
 .realisations,
 .zone,
 .contact{
-    position:relative;
-    background:rgba(255,255,255,.94);
-    backdrop-filter:blur(12px);
+
+background:rgba(255,255,255,.93);
+
+backdrop-filter:blur(12px);
+
+border-radius:28px;
+
+margin:60px auto;
+
+max-width:1400px;
+
+padding:70px 50px;
+
 }
 
-footer{
-    background:#111;
-}
+.hero{
 
-.hero::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,.45);
-}
+background:transparent!important;
 
-.hero-content{
-    position:relative;
-    z-index:2;
-}
-
-.gallery img{
-    transition:.5s;
-}
-
-.gallery img:hover{
-    transform:scale(1.05);
 }
