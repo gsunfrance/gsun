@@ -211,7 +211,9 @@ Recevoir mon devis
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
 <script>
-emailjs.init("LVNgxlzdIi7V1k0-1");
+emailjs.init({
+  publicKey: "LVNgxlzdIi7V1k0-1",
+});
 
 document.getElementById("contact-form").addEventListener("submit", function(e){
 
@@ -220,7 +222,7 @@ e.preventDefault();
 emailjs.sendForm(
 "service_jk0srqp",
 "template_08bcw4r",
-this
+this,
 "LVNgx1zdIi7V1k0-1"
 ).then(function(){
 
