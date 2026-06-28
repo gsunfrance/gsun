@@ -55,7 +55,7 @@ color:#d9a600;
 
 .hero{
 height:100vh;
-background:url("images/hero.jpg") center center/cover no-repeat;
+background:url("images/hero.jpeg") center center/cover no-repeat;
 display:flex;
 justify-content:center;
 align-items:center;
@@ -290,4 +290,59 @@ margin-top:20px;
 color:#FFD54A;
 font-weight:700;
 text-decoration:none;
+}
+
+.animation-solaire{
+padding:120px 8%;
+background:#fff;
+text-align:center;
+overflow:hidden;
+}
+
+.animation-solaire h2{
+font-size:48px;
+margin-bottom:70px;
+}
+
+.solar{
+display:grid;
+grid-template-columns:repeat(4,140px);
+gap:20px;
+justify-content:center;
+perspective:1200px;
+}
+
+.panel{
+width:140px;
+height:90px;
+background:linear-gradient(135deg,#1e3d7a,#2b67c9,#16305c);
+border:3px solid #5ec3ff;
+border-radius:8px;
+position:relative;
+transform:rotateX(90deg);
+opacity:0;
+transition:1s;
+box-shadow:0 15px 30px rgba(0,0,0,.25);
+}
+
+.panel::before{
+content:"";
+position:absolute;
+inset:0;
+background:
+linear-gradient(to right,transparent 24%,rgba(255,255,255,.35) 25%,transparent 26%,transparent 49%,rgba(255,255,255,.35) 50%,transparent 51%,transparent 74%,rgba(255,255,255,.35) 75%,transparent 76%),
+linear-gradient(to bottom,transparent 24%,rgba(255,255,255,.35) 25%,transparent 26%,transparent 49%,rgba(255,255,255,.35) 50%,transparent 51%,transparent 74%,rgba(255,255,255,.35) 75%,transparent 76%);
+}
+
+.panel.visible{
+transform:rotateX(0deg);
+opacity:1;
+}
+
+@media(max-width:900px){
+
+.solar{
+grid-template-columns:repeat(2,140px);
+}
+
 }

@@ -35,3 +35,27 @@ window.addEventListener("scroll", function () {
     }
 
 });
+
+const panels = document.querySelectorAll(".panel");
+
+function animationSolaire() {
+
+    const section = document.querySelector(".animation-solaire");
+    const top = section.getBoundingClientRect().top;
+
+    if (top < window.innerHeight - 150) {
+
+        panels.forEach((panel, index) => {
+
+            setTimeout(() => {
+                panel.classList.add("visible");
+            }, index * 180);
+
+        });
+
+        window.removeEventListener("scroll", animationSolaire);
+    }
+}
+
+window.addEventListener("scroll", animationSolaire);
+animationSolaire();
