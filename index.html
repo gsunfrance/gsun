@@ -169,7 +169,7 @@
 
         <p>Réponse sous 24 heures.</p>
 
-        <form id="contact-form>
+        <form id="contact-form">
 
            <input type="text" name="from_name" placeholder="Nom" required>
 
@@ -215,8 +215,6 @@ emailjs.init({
   publicKey: "LVNgxlzdIi7V1k0-1",
 });
 
-alert("Le script fonctionne !");
-
 document.getElementById("contact-form").addEventListener("submit", function(e){
 
 e.preventDefault();
@@ -224,7 +222,7 @@ e.preventDefault();
 emailjs.sendForm(
 "service_jk0srqp",
 "template_08bcw4r",
-this
+e.target
 ).then(function(){
 
 alert("Votre demande a bien été envoyée !");
